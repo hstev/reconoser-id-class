@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "6f835346-0201-4eb8-952b-d735ad4bd306",
+		"name": "hstev/reconoser-id-class",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. TraerToken: Traer JWT Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ClientId\": \"CLIENT_ID\",\r\n    \"ClientSecret\": \"CLIENT_PASSWORD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demorcs.olimpiait.com:6317/TraerToken",
+					"protocol": "https",
+					"host": [
+						"demorcs",
+						"olimpiait",
+						"com"
+					],
+					"port": "6317",
+					"path": [
+						"TraerToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. SolicitudValidacion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "TOKEN_GENERADO_EN_PASO_1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"guidConv\": \"GUID_CONVENIO\",\r\n    \"tipoValidacion\": \"1\",\r\n    \"asesor\": \"ASESOR\",\r\n    \"sede\": \"SEDE\",\r\n    \"codigoCliente\":\"CODIGO_ALEATORIO_O_ID_TABLA_CLIENTE\",\r\n    \"tipoDoc\": \"CC\",\r\n    \"numDoc\": \"NUM_DOCUMENTO\",\r\n    \"email\": \"CORREO_CLIENTE@DOMINIO.COM\",\r\n    \"celular\": \"CELULAR_CLIENTE\",\r\n    \"usuario\": \"USUARIO\",\r\n    \"clave\": \"PASSWORD\",\r\n    \"InfCandidato\": \"{\\\"company\\\":\\\"COMPANY_NAME\\\"}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demorcs.olimpiait.com:6314/Validacion/SolicitudValidacion",
+					"protocol": "https",
+					"host": [
+						"demorcs",
+						"olimpiait",
+						"com"
+					],
+					"port": "6314",
+					"path": [
+						"Validacion",
+						"SolicitudValidacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. ConsultarValidacion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "TOKEN_GENERADO_EN_PUNTO_1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"guidConv\": \"GUID_CONVENIO\",\r\n    \"procesoConvenioGuid\": \"PROCESO_CREADO_EN_PASO_2\",\r\n    \"usuario\": \"USUARIO\",\r\n    \"clave\": \"PASSWORD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demorcs.olimpiait.com:6314/Validacion/ConsultarValidacion",
+					"protocol": "https",
+					"host": [
+						"demorcs",
+						"olimpiait",
+						"com"
+					],
+					"port": "6314",
+					"path": [
+						"Validacion",
+						"ConsultarValidacion"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
