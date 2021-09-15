@@ -1,6 +1,6 @@
 # ReconoSER ID Class
 
-Este repositorio cuenta con una clase lista para configurar e importar en tus proyectos para integrar el modulo de reconocimiento de biometria y documento que ofrece la empresa Olimpia.
+Este repositorio cuenta con una clase lista para configurar e importar en tus proyectos el modulo de reconocimiento de biometria y documento que ofrece la empresa Olimpia.
 
 Para familiarizarte con el funcionamiento importa la collection de POSTMAN
 
